@@ -1,0 +1,12 @@
+disabled_rules: # 기본 규칙 중 제외할 규칙들
+  - trailing_whitespace # 코드 끝 공백 검사 끔
+  - line_length # 한 줄의 최대 길이 제한 끔
+
+opt_in_rules: # 기본 규칙 외에 추가로 엄격하게 검사할 규칙들
+  - empty_count # .count == 0 대신 .isEmpty 사용 강제
+  - force_unwrapping # 강제 언래핑 금지 앱 크래시 방지
+
+# 검사에서 제외할 폴더 지정
+excluded:
+  - Pods
+  - Carthage

@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4251F2092FC1CDA300922CFB /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 4251F2082FC1CDA200922CFB /* .swiftlint.yml */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		4251F2082FC1CDA200922CFB /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		4294421C2FC19ED20089C5C9 /* MovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -45,6 +50,7 @@
 		429442132FC19ED20089C5C9 = {
 			isa = PBXGroup;
 			children = (
+				4251F2082FC1CDA200922CFB /* .swiftlint.yml */,
 				4294421E2FC19ED20089C5C9 /* MovieApp */,
 				4294421D2FC19ED20089C5C9 /* Products */,
 			);
@@ -72,6 +78,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4251F2072FC1CD5400922CFB /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				4294421E2FC19ED20089C5C9 /* MovieApp */,
@@ -107,6 +114,9 @@
 			);
 			mainGroup = 429442132FC19ED20089C5C9;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4251F2052FC1CD1200922CFB /* XCRemoteSwiftPackageReference "SwiftLint" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4294421D2FC19ED20089C5C9 /* Products */;
 			projectDirPath = "";
@@ -122,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4251F2092FC1CDA300922CFB /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +147,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4251F2072FC1CD5400922CFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 4251F2062FC1CD5400922CFB /* SwiftLintBuildToolPlugin */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		429442302FC19ED30089C5C9 /* Debug */ = {
@@ -345,6 +363,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4251F2052FC1CD1200922CFB /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.63.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4251F2062FC1CD5400922CFB /* SwiftLintBuildToolPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4251F2052FC1CD1200922CFB /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintBuildToolPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 429442142FC19ED20089C5C9 /* Project object */;
 }
