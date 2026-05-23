@@ -50,6 +50,3 @@
 ## ADR (Architecture Decision Record)
 구조가 변경되거나 새로운 기술을 도입할 때, 해당 의사결정의 배경과 논리적 근거를 기록합니다.
 
-* [ADR-001] (작성 예정: Storyboard에서 Programmatic UI로 전환한 이유)
-* [ADR-002] (작성 예정: Clean Architecture 계층 분리 및 DIP 적용 기준)
-* [ADR-003] (작성 예정: Tuist를 활용한 물리적 모듈 분할 전략)
