@@ -59,12 +59,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMjMxNTk2YzcyYTQzZGJkMzBkZTVmYTgyMWViN2I0ZCIsIm5iZiI6MTcyNTg0OTA2MS43MjUsInN1YiI6IjY2ZGU1ZGU1ODU0YWM5YjhiMjNhZDI5NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c92tln1Wv1Oue44ufRTiboivuWCE7abIQgATx4eXVgs"
         
         request.allHTTPHeaderFields = [
-            "accept" : "application/json",
-            "Authorization" : "Bearer \(token)"
+            "accept": "application/json",
+            "Authorization": "Bearer \(token)"
         ]
         
-        
-        let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+        let task = URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
             
             if let error = error {
                 print("네트워크 오류: \(error)")
@@ -78,7 +77,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
                 DispatchQueue.main.async {
                     self?.movies = decodedResponse.results
-                    self?.movieTableView.reloadData()
+                    self?.movieTableView.reloadData() 
                 }
             } catch {
                 print("디코딩 오류: \(error)")
@@ -101,4 +100,3 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
 }
-
