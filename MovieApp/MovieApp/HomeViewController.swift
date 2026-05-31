@@ -24,7 +24,7 @@ struct Movie: Codable {
     }
 }
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var movieTableView: UITableView!
     
