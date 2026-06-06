@@ -28,7 +28,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var movieTableView: UITableView!
     
-    private let apiKey = "f231596c72a43dbd30de5fa821eb7b4d"
+    private let apiKey = Secrets.tmdbApiKey
     private var movies: [Movie] = []
     
     override func viewDidLoad() {
@@ -58,7 +58,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         request.httpMethod = "GET"
         request.timeoutInterval = 10
         
-        let token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJmMjMxNTk2YzcyYTQzZGJkMzBkZTVmYTgyMWViN2I0ZCIsIm5iZiI6MTcyNTg0OTA2MS43MjUsInN1YiI6IjY2ZGU1ZGU1ODU0YWM5YjhiMjNhZDI5NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.c92tln1Wv1Oue44ufRTiboivuWCE7abIQgATx4eXVgs"
+        let token = Secrets.tmdbToken
         
         request.allHTTPHeaderFields = [
             "accept": "application/json",
