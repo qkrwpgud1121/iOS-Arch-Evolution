@@ -37,6 +37,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         movieTableView.dataSource = self
         movieTableView.delegate = self
         
+        self.navigationItem.title = "현재 상영작"
+        
         fetchPopularMovies()
     }
     
@@ -91,11 +93,29 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as? MovieCell else {
+            return UITableViewCell()
+        }
+        
         let movie = movies[indexPath.row]
         
-        cell.textLabel?.text = movie.title
-        cell.detailTextLabel?.text = movie.releaseDate
+        cell.titleLabel.text = movie.title
+        cell.dateLabel.text = movie.releaseDate
+        cell.overviewLabel.text = movie.overview
+        
+        cell.posterImageView.image = nil
+        
+        if let posterPath = movie.posterPath {
+            if let imageUrl = URL(string: "https://image.tmdb.org/t/p/w200\(posterPath)") {
+                DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: imageUrl), let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            cell.posterImageView.image = image
+                        }
+                    }
+                }
+            }
+        }
         
         return cell
     }
