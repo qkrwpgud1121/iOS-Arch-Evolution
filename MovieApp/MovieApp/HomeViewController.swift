@@ -36,6 +36,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         movieTableView.dataSource = self
         movieTableView.delegate = self
+        movieTableView.rowHeight = UITableView.automaticDimension
+        movieTableView.estimatedRowHeight = 150
         
         self.navigationItem.title = "현재 상영작"
         
