@@ -44,6 +44,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         fetchPopularMovies()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDetail" {
+            if let destination = segue.destination as? MovieDetailViewController,
+               let indexPath = movieTableView.indexPathForSelectedRow {
+                destination.movie = movies[indexPath.row]
+            }
+        }
+    }
+    
     private func fetchPopularMovies() {
         
         guard let baseUrl = URL(string: "https://api.themoviedb.org/3/movie/popular") else { return }
@@ -121,4 +130,5 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         return cell
     }
+    
 }
