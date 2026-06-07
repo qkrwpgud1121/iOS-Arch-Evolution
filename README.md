@@ -62,3 +62,17 @@
 ## ADR (Architecture Decision Record)
 구조가 변경되거나 새로운 기술을 도입할 때, 해당 의사결정의 배경과 논리적 근거를 기록합니다.
 
+## Troubleshooting
+
+### MVC
+
+1. CollectionView Cell `Estimate Size`
+    - 문제: 코드를 사용해 컬렉션뷰 셀의 크기를 지정 하였으나 시뮬레이터 빌드 시 영화 포스터들이 바둑판 모양으로 뭉쳐나와 가로 스크롤이 되지 않는 현상이 발생했다.
+    
+    - 원인: 
+        1. `Story Board`에서는 컴포넌트의 Auto Layout 기반으로 Cell의 크기를 자동으로 연산하는 `Estimate Size: Automatic`이 기본값으로 설정되어 있다.
+        
+        2. 내부 이미지뷰가 Auto Layout 계산에 실패하여 강제로 이미지 뷰를 압축하는 현상이 발생한다.
+        
+    - 해결 방법: `Story Board`에서 Collection View의 `Estimate Size`의 속성값을 `None`으로 변경하여 자동 연산 을 차단하였다.
+    
