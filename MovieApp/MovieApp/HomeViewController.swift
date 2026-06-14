@@ -13,8 +13,8 @@ struct MovieResponse: Codable {
 
 struct Movie: Codable {
     let title: String
-    let overview: String
-    let releaseDate: String
+    let overview: String?
+    let releaseDate: String?
     let posterPath: String?
     
     enum CodingKeys: String, CodingKey {
@@ -67,21 +67,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         fetchMovies(url: "https://api.themoviedb.org/3/movie/top_rated?language=ko-KR&page=1") { [weak self] movies in
-            self?.popularMovies = movies
+            self?.topRatedMovies = movies
             DispatchQueue.main.async {
                 self?.movieTableView.reloadSections(IndexSet(integer: 2), with: .automatic)
             }
         }
         
         fetchMovies(url: "https://api.themoviedb.org/3/discover/movie?language=ko-KR&with_genres=16") { [weak self] movies in
-            self?.popularMovies = movies
+            self?.animationMovies = movies
             DispatchQueue.main.async {
                 self?.movieTableView.reloadSections(IndexSet(integer: 3), with: .automatic)
             }
         }
         
         fetchMovies(url: "https://api.themoviedb.org/3/discover/movie?language=ko-KR&with_genres=28") { [weak self] movies in
-            self?.popularMovies = movies
+            self?.actionMovies = movies
             DispatchQueue.main.async {
                 self?.movieTableView.reloadSections(IndexSet(integer: 4), with: .automatic)
             }
