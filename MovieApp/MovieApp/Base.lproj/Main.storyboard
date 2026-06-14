@@ -21,8 +21,59 @@
                                 <rect key="frame" x="0.0" y="172" width="393" height="563"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="BannerCell" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BannerCell" rowHeight="400" id="Rbr-3p-TMx" customClass="BannerCell" customModule="MovieApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50.333333969116211" width="393" height="400"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rbr-3p-TMx" id="HFW-7L-AzP">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="400"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4eN-er-qKb">
+                                                    <rect key="frame" x="20" y="15" width="353" height="370"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="jKt-XB-Moh">
+                                                    <rect key="frame" x="36" y="329" width="321" height="40"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnL-Uu-S9d">
+                                                            <rect key="frame" x="0.0" y="0.0" width="158.66666666666666" height="40"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system" title="재생"/>
+                                                            <connections>
+                                                                <action selector="playButtonClicked:" destination="Rbr-3p-TMx" eventType="touchUpInside" id="6iB-XK-6XP"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CvC-eO-XMT">
+                                                            <rect key="frame" x="162.66666666666663" y="0.0" width="158.33333333333337" height="40"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system" title="내가 찜한 콘텐츠"/>
+                                                            <connections>
+                                                                <action selector="wishlistButtonClicked:" destination="Rbr-3p-TMx" eventType="touchUpInside" id="NAo-v7-Q6Y"/>
+                                                            </connections>
+                                                        </button>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="CqE-al-eVe"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="4eN-er-qKb" secondAttribute="trailing" id="BuI-6e-crw"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="jKt-XB-Moh" secondAttribute="bottom" constant="16" id="Dep-9A-ZBK"/>
+                                                <constraint firstItem="jKt-XB-Moh" firstAttribute="leading" secondItem="HFW-7L-AzP" secondAttribute="leadingMargin" constant="16" id="OXC-cz-3TV"/>
+                                                <constraint firstItem="4eN-er-qKb" firstAttribute="top" secondItem="HFW-7L-AzP" secondAttribute="topMargin" id="Q0r-Cd-kFy"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4eN-er-qKb" secondAttribute="bottom" id="poZ-OO-1eV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="jKt-XB-Moh" secondAttribute="trailing" constant="16" id="rXH-Hm-NAq"/>
+                                                <constraint firstItem="4eN-er-qKb" firstAttribute="leading" secondItem="HFW-7L-AzP" secondAttribute="leadingMargin" id="uqx-ER-S6b"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bannerImageView" destination="4eN-er-qKb" id="qJL-uz-1qB"/>
+                                            <outlet property="playButton" destination="SnL-Uu-S9d" id="MmU-R1-7i6"/>
+                                            <outlet property="wishlistButton" destination="CvC-eO-XMT" id="Rat-cK-Lgx"/>
+                                        </connections>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieRowCell" rowHeight="200" id="JE6-FP-6eu" customClass="MovieRowCell" customModule="MovieApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50.333333969116211" width="393" height="200"/>
+                                        <rect key="frame" x="0.0" y="450.33333396911621" width="393" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JE6-FP-6eu" id="uF6-ri-gNT">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
@@ -75,7 +126,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MovieCell" rowHeight="200" id="Nu8-aY-x6M" customClass="MovieCell" customModule="MovieApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="250.33333396911621" width="393" height="200"/>
+                                        <rect key="frame" x="0.0" y="650.33333396911621" width="393" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nu8-aY-x6M" id="h40-4l-1FI">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
@@ -250,6 +301,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="play.fill" catalog="system" width="120" height="128"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
